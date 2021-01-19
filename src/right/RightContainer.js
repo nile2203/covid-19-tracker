@@ -1,6 +1,7 @@
 import React from 'react'
 import Table from '../components/table/Table'
 import { Card, CardContent } from '@material-ui/core';
+import './RIghtContainer.css'
 
 function RightContainer({ tableData }) {
     return (

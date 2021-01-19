@@ -15,6 +15,7 @@ export default function LeftContainer({ countries }) {
         .then(response => response.json())
         .then(data => {
             setGraphData(data)
+            console.log(data)
         })
         .catch(error => console.log(error))
     }

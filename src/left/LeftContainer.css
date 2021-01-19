@@ -1,6 +1,7 @@
 .app__cards {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 30px;
 }
 
 .app__leftContainer {

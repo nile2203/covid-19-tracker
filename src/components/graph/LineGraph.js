@@ -1,4 +1,3 @@
-import { red } from '@material-ui/core/colors';
 import React from 'react'
 import { Line } from 'react-chartjs-2'
 import numeral from 'numeral'
@@ -12,7 +11,8 @@ const options = {
             radius: 0,
         }
     },
-    maintainAspectRatio: false,
+    maintainAspectRatio: true,
+    responsive: true,
     tooltip: {
         intersect: false,
         mode: "index",
@@ -41,7 +41,8 @@ const options = {
                     callback: function(value, index, values) {
                         return numeral(value).format("0a")
                     }
-                }
+                },
+                stacked: true,
             }
         ]
     }
@@ -59,6 +60,10 @@ function LineGraph({ data, caseType="cases" }) {
         }
         if (newData[caseType]) {
             for (const [date, value] of Object.entries(newData[caseType])) {
+                finalData.push({
+                    x: date,
+                    y: value
+                })
             }
         }
         return finalData
@@ -71,8 +76,13 @@ function LineGraph({ data, caseType="cases" }) {
                 datasets: [
                     {
                         data: transformData(),
-                        backgroundColor: red,
-                        borderColor: "#CC1034",
+                        backgroundColor: "#ffe6ff",
+                        borderColor: "#cc00cc",
+                        borderWidth: 2,
+                        pointBackgroundColor: "#cc00cc",
+                        pointBorderColor: "#ffffff",
+                        pointBorderWidth: 0,
+                        showLine: false
                     },
                 ],
             }}
