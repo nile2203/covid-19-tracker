@@ -13,6 +13,15 @@ const options = {
     },
     maintainAspectRatio: true,
     responsive: true,
+    animation: {
+        tension: {
+            duration: 1000,
+            easing: 'easeInBack',
+            from: 1,
+            to: 0,
+            loop: true
+        }
+    },
     tooltip: {
         intersect: false,
         mode: "index",
